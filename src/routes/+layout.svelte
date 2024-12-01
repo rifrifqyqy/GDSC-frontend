@@ -1,9 +1,7 @@
 <script>
-	import Header from './Header.svelte';
 	import '../app.css';
 	import Navbar from '$lib/components/fragments/Navbar.svelte';
 	import { onMount } from 'svelte';
-	import { writable } from 'svelte/store';
 
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
