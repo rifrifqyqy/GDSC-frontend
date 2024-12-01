@@ -1,6 +1,6 @@
 <script>
 	export let error;
-	export let status; // Status kode error, misalnya 404
+	export let status;
 </script>
 
 <main class="text-center">
