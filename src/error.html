@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FUDO | %sveltekit.error.message%</title>
+		<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f9f9f9;
+				color: #333;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+			}
+			.container {
+				text-align: center;
+				padding: 2rem;
+				background: white;
+				border-radius: 8px;
+				max-width: 600px;
+				width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        
+			}
+			h1 {
+				font-size: 2rem;
+				color: #232323;
+				margin: 0 0 1rem 0;
+			}
+			p {
+				font-size: 1rem;
+				margin: 0.5rem 0;
+			}
+
+			.error-btn {
+				background-color: #ff4d4f;
+				color: white;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+				cursor: pointer;
+				margin-top: 32px;
+			}
+
+      .status {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ff4d4f;
+      }
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<figure>
+				<img src="/images/fudologo.png" alt="" />
+			</figure>
+			<h1>Oops! Something went wrong</h1>
+			<p class="status">Status: %sveltekit.status%</p>
+			<p>Message: %sveltekit.error.message%</p>
+			<p><a href="/" class="error-btn">Go back to Home</a></p>
+		</div>
+	</body>
+</html>
