@@ -14,7 +14,8 @@ export default {
 					// buatkan sampai 300
 					100: '#F54748',
 					200: '#F64C4C',
-					300: '#F75A5A'
+					300: '#F75A5A',
+					800: '#FEE4E4'
 				},
 				// buatkan setcolor untuk dark
 				dark: {
