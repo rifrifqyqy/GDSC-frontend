@@ -32,7 +32,7 @@
 	</Button>
 </nav>
 
-<style>
+<style scoped>
 	.navbar {
 		display: flex;
 		justify-content: space-between;

@@ -21,7 +21,7 @@
 	];
 </script>
 
-<main>
+<main class="main-wrapper">
 	<article class="title">
 		<h1>What We Serve</h1>
 		<h2>Your Favourite Food Delivery Partner</h2>
@@ -45,7 +45,7 @@
 	</section>
 </main>
 
-<style>
+<style scoped>
 	.title {
 		@apply flex flex-col items-center gap-4;
 

@@ -17,7 +17,7 @@
 	<slot>{label}</slot>
 </button>
 
-<style>
+<style scoped>
 	.button {
 		font-size: 1rem;
 		cursor: pointer;

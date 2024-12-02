@@ -11,7 +11,7 @@
 	{/if}
 </main>
 
-<style>
+<style scoped>
 	main {
 		margin: 2rem;
 		font-family: Arial, sans-serif;

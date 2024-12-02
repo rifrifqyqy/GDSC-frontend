@@ -1,4 +1,5 @@
 <script>
+	import DownloadApp from '$lib/components/layouts/Herosection/downloadApp.svelte';
 	import Herolayout from '$lib/components/layouts/Herosection/herolayout.svelte';
 	import WhatweServe from '$lib/components/layouts/whatweServe.svelte';
 </script>
@@ -9,10 +10,13 @@
 </svelte:head>
 
 <main class="">
-	<section class="mt-10">
+	<section class="mt-10 flex flex-col gap-24">
 		<Herolayout />
-		<section class="mt-24">
+		<section class="">
 			<WhatweServe />
+		</section>
+		<section class="">
+			<DownloadApp />
 		</section>
 		<div class="hero-wrapper absolute top-0 -z-50 h-screen w-full"></div>
 	</section>

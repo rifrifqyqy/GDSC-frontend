@@ -28,7 +28,7 @@
 	<!-- end right content -->
 </main>
 
-<style>
+<style scoped>
 	.main-content {
 		@apply m-auto flex flex-col gap-4;
 		.hero-label {
