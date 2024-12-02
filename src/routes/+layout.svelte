@@ -3,6 +3,7 @@
 	import Navbar from '$lib/components/fragments/Navbar.svelte';
 	import { onMount } from 'svelte';
 	import FooterLayout from '$lib/components/layouts/footerLayout.svelte';
+	import { page } from '$app/stores';
 
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -20,17 +21,21 @@
 </script>
 
 <div class="relative min-h-screen font-sans">
-	<nav
-		class={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? ' bg-white shadow-sm' : ''}`}
-	>
-		<div class="px-24">
-			<Navbar />
-		</div>
-	</nav>
-	<main>
+	{#if $page.error}{:else}
+		<nav
+			class={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? ' bg-white shadow-sm' : ''}`}
+		>
+			<div class="px-24">
+				<Navbar />
+			</div>
+		</nav>
+	{/if}
+	<main class="min-h-screen">
 		{@render children()}
 	</main>
-	<FooterLayout />
+	{#if $page.error}{:else}
+		<FooterLayout />
+	{/if}
 </div>
 
 <style scoped>
