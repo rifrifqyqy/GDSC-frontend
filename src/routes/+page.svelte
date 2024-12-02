@@ -1,6 +1,7 @@
 <script>
 	import DownloadApp from '$lib/components/layouts/Herosection/downloadApp.svelte';
 	import Herolayout from '$lib/components/layouts/Herosection/herolayout.svelte';
+	import MenuShow from '$lib/components/layouts/Herosection/menuShow.svelte';
 	import WhatweServe from '$lib/components/layouts/whatweServe.svelte';
 </script>
 
@@ -10,10 +11,13 @@
 </svelte:head>
 
 <main class="">
-	<section class="mt-10 flex flex-col gap-24">
+	<section class="mt-10 flex flex-col gap-32">
 		<Herolayout />
 		<section class="">
 			<WhatweServe />
+		</section>
+		<section>
+			<MenuShow />
 		</section>
 		<section class="">
 			<DownloadApp />
