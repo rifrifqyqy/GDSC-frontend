@@ -32,13 +32,14 @@
 				<figure>
 					<img
 						src={skibidi.images}
-						alt="${skibidi.name} Image"
+						alt="{skibidi.name} Image"
 						class="h-[200px] w-full object-contain"
 					/>
 					<article>
 						<h1>{skibidi.name}</h1>
 						<p>{skibidi.description}</p>
 					</article>
+					
 				</figure>
 			</main>
 		{/each}
