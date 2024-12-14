@@ -4,8 +4,5 @@
 		"env": {
 			"NODE_VERSION": "20"
 		}
-	},
-	"function": {
-		"runtime": "nodejs20.x"
 	}
 }
