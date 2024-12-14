@@ -9,10 +9,7 @@ const config = {
 		adapter: adapter({
 			runtime: 'nodejs22.x'
 		}),
-		prerender: {
-			handleMissingId: 'ignore',
-			handleHttpError: 'warn'
-		}
+
 	}
 };
 
