@@ -30,7 +30,7 @@
 			</div>
 		</nav>
 	{/if}
-	<main class="min-h-screen">
+	<main class="min-h-screen container mx-auto">
 		{@render children()}
 	</main>
 	{#if $page.error}{:else}
