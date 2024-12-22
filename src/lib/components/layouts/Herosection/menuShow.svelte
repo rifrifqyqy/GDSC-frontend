@@ -42,7 +42,7 @@
 	</section>
 </main>
 
-<style scoped>
+<style>
 	.menu-img {
 		@apply aspect-square h-[23.5rem] rounded-xl object-cover;
 	}
