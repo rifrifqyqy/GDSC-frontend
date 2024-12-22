@@ -1,7 +1,8 @@
 <script>
 	import DownloadApp from '$lib/components/layouts/Herosection/downloadApp.svelte';
-	import Herolayout from '$lib/components/layouts/Herosection/herolayout.svelte';
+	import Herolayout from '$lib/components/layouts/Herosection/heroLayout.svelte';
 	import MenuShow from '$lib/components/layouts/Herosection/menuShow.svelte';
+	import WhattheySay from '$lib/components/layouts/Herosection/whattheySay.svelte';
 	import WhatweServe from '$lib/components/layouts/whatweServe.svelte';
 </script>
 
@@ -21,6 +22,9 @@
 		</section>
 		<section class="">
 			<DownloadApp />
+		</section>
+		<section>
+			<WhattheySay />
 		</section>
 		<div class="hero-wrapper absolute top-0 -z-50 h-screen w-full"></div>
 	</section>
