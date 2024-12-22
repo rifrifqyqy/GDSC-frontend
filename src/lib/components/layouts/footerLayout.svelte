@@ -1,5 +1,4 @@
 <script>
-	// data link
 	let about = [
 		{
 			id: 1,
