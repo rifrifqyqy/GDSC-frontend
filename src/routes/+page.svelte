@@ -26,7 +26,7 @@
 		<section>
 			<WhattheySay />
 		</section>
-		<div class="hero-wrapper absolute top-0 -z-50 h-screen w-full"></div>
+		<div class="hero-wrapper absolute top-0 -z-50 h-screen w-full self-center"></div>
 	</section>
 </main>
 
@@ -34,7 +34,7 @@
 	.hero-wrapper {
 		background: linear-gradient(
 			180deg,
-			rgba(245, 71, 72, 0.15) 0%,
+			rgba(245, 71, 72, 0.20) 0%,
 			rgba(255, 255, 255, 0.3) 75.17%
 		);
 	}

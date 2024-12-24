@@ -25,12 +25,12 @@
 		<nav
 			class={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? ' bg-white shadow-sm' : ''}`}
 		>
-			<div class="px-24">
+			<div class="px-4 xl:px-24">
 				<Navbar />
 			</div>
 		</nav>
 	{/if}
-	<main class="container mx-auto min-h-screen">
+	<main class="2xl:container mx-auto min-h-screen">
 		{@render children()}
 	</main>
 	{#if $page.error}{:else}
