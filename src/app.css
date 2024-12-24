@@ -19,10 +19,6 @@
 	color: var(--color-text);
 }
 
-
-
-
-
 .text-column {
 	display: flex;
 	max-width: 48rem;
@@ -61,5 +57,5 @@ button:focus:not(:focus-visible) {
 }
 
 .main-wrapper {
-	@apply px-24;
+	@apply px-8 md:px-24;
 }
