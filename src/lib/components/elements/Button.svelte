@@ -10,7 +10,7 @@
 <button
 	on:click={onClick}
 	class={twMerge(
-		`button bg-primary-100 rounded-full px-4 py-2 text-white transition-all duration-300 ${customClass}`
+		`bg-primary-100 flex h-fit cursor-pointer rounded-full px-4 py-2 text-[1rem] text-white transition-all duration-300 ${customClass}`
 	)}
 	{style}
 >
@@ -18,13 +18,6 @@
 </button>
 
 <style scoped>
-	.button {
-		font-size: 1rem;
-		cursor: pointer;
-		height: fit-content;
-		display: flex;
-	}
-
 	.button:hover {
 		@apply opacity-80;
 	}
