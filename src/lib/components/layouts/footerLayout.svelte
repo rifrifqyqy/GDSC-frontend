@@ -72,21 +72,21 @@
 	];
 </script>
 
-<footer class="bottom-0 mt-24 grid grid-cols-5 gap-16 bg-white p-24">
-	<section class="col-span-2 flex flex-col gap-4">
+<footer class="bottom-0 mt-16 grid grid-cols-3 gap-16 bg-white p-8 md:mt-24 md:grid-cols-5 md:p-24">
+	<section class="col-span-3 flex flex-col gap-4 md:col-span-2">
 		<figure class="text-dark-100 flex items-center gap-4">
-			<img src="/images/fudologo.png" class="aspect-auto h-12" alt="" />
-			<h1 class="text-3xl font-semibold">Fudo</h1>
+			<img src="/images/fudologo.png" class="aspect-auto h-8 md:h-12" alt="" />
+			<h1 class="text-[1.5rem] font-semibold md:text-3xl">Fudo</h1>
 		</figure>
 		<article>
-			<p class="text-base">
+			<p class="text-[0.9rem] md:text-base">
 				Our job is to filling youe tummy with delicious food and with fast and free delivery time.
 			</p>
 		</article>
 		<div class="flex items-center gap-4">
-			<img src="/images/ig.svg" alt="" />
-			<img src="/images/fb.svg" alt="" />
-			<img src="/images/twt.svg" alt="" />
+			<img src="/images/ig.svg" class="max-md:h-5" alt="" />
+			<img src="/images/fb.svg" class="max-md:h-5" alt="" />
+			<img src="/images/twt.svg" class="max-md:h-5" alt="" />
 		</div>
 	</section>
 	<section>
@@ -123,12 +123,12 @@
 
 <style scoped>
 	.footer-title {
-		@apply text-2xl font-bold;
+		@apply text-[1.1rem] font-bold md:text-2xl;
 	}
 	.ul-footer {
-		@apply text-dark-500 mt-4 flex flex-col gap-4;
+		@apply text-dark-500 mt-4 flex flex-col gap-2 md:gap-4;
 		a {
-			@apply hover:text-primary-100 transition-all;
+			@apply hover:text-primary-100 transition-all max-md:text-[0.9rem];
 		}
 	}
 </style>
