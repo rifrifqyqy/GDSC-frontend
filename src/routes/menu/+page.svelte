@@ -1,9 +1,9 @@
 <script>
 	import CardMenu from '$lib/components/elements/CardMenu.svelte';
+	import { formatToRupiah } from '$lib/utils/currency.js';
 
 	export let data;
 	const { recipes } = data;
-	console.log(recipes);
 </script>
 
 <svelte:head>
@@ -23,7 +23,7 @@
 				thumb={R.image}
 				label={R.mealType}
 				rating={R.rating}
-				price="${R.caloriesPerServing}"
+				price="{formatToRupiah(R.caloriesPerServing * 100)}"
 			/>
 		{/each}
 	</section>
