@@ -60,6 +60,10 @@ button:focus:not(:focus-visible) {
 	@apply px-8 md:px-24;
 }
 
+.menu-wrapper {
+	@apply px-4 md:px-24;
+}
+
 /* custom scrollbar */
 ::-webkit-scrollbar {
 	width: 8px;
