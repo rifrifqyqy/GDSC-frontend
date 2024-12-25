@@ -11,7 +11,6 @@
 	let isScrolled = $state(false);
 	const handleScroll = () => {
 		isScrolled = window.scrollY > 0;
-		console.log('Scroll Position:', window.scrollY, 'Is Scrolled:', isScrolled);
 	};
 
 	onMount(() => {
@@ -30,7 +29,7 @@
 			</div>
 		</nav>
 	{/if}
-	<main class="2xl:container mx-auto min-h-screen">
+	<main class="mx-auto min-h-screen 2xl:container">
 		{@render children()}
 	</main>
 	{#if $page.error}{:else}
