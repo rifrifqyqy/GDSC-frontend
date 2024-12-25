@@ -124,7 +124,7 @@
 	<p>
 		<img src="images/svelte.png" alt="" />
 		Made with svelte.
-		<a href="https://svelte.dev/"> see documentation</a>
+		<a href="https://svelte.dev/"> see documentations</a>
 	</p>
 </footer>
 
