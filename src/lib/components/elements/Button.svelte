@@ -10,7 +10,7 @@
 <button
 	on:click={onClick}
 	class={twMerge(
-		`bg-primary-100 flex h-fit cursor-pointer rounded-full px-4 py-2 text-[1rem] text-white transition-all duration-300 ${customClass}`
+		`bg-primary-100 flex h-fit cursor-pointer rounded-full px-4 py-2 text-[1rem] text-white transition-all duration-300 hover:opacity-85 active:scale-95 ${customClass}`
 	)}
 	{style}
 >
