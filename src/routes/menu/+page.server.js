@@ -3,7 +3,11 @@ export const load = async ({ fetch }) => {
 	if (!response.ok) {
 		throw new Error('Failed to fetch recipes');
 	}
-
-	const d = await response.json();
-	return { recipes: d.recipes };
+	try {
+		const data = await response.json();
+		return { recipes: data.recipes };
+	} catch (err) {
+		console.error('Failed to parse JSON:', err);
+		return { recipes: [] };
+	}
 };
