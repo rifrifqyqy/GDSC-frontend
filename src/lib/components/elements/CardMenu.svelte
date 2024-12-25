@@ -84,7 +84,7 @@
 		@apply flex h-full cursor-pointer flex-col gap-2;
 		.__card-image {
 			img {
-				@apply rounded-md object-cover object-center;
+				@apply rounded-lg object-cover object-center;
 			}
 		}
 
@@ -102,7 +102,7 @@
 				@apply flex flex-wrap gap-2;
 
 				p {
-					@apply text-light-100 bg-primary-100 rounded-full px-2 text-[0.6rem] font-normal  md:text-[0.8rem];
+					@apply text-light-100 bg-primary-100 rounded-full px-2 text-[0.6rem] font-normal md:text-[0.8rem];
 				}
 			}
 
@@ -112,11 +112,11 @@
 				.__rating {
 					@apply flex items-center gap-2 text-yellow-500;
 					p {
-						@apply text-dark-400 max-md:mt-0.5 text-[0.7rem] md:text-[1rem] font-semibold;
+						@apply text-dark-400 text-[0.7rem] font-semibold max-md:mt-0.5 md:text-[1rem];
 					}
 				}
 				h1 {
-					@apply text-dark-100 text-[0.9rem] md:text-[1.3rem] font-semibold;
+					@apply text-dark-100 text-[0.9rem] font-semibold md:text-[1.3rem];
 				}
 			}
 		}
