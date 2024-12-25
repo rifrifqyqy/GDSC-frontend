@@ -90,7 +90,7 @@
 <!-- mobile navigation -->
 <nav
 	class="absolute left-0 top-0 -z-20 block h-screen w-full bg-white transition-all duration-300 md:hidden
-{navToggle ? 'translate-y-0 opacity-100' : 'translate-y-[-40%] opacity-0'}"
+{navToggle ? 'translate-y-0 opacity-100' : 'translate-y-[-150%] opacity-0'}"
 >
 	<ul class="__nav-mobilemenu">
 		<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
