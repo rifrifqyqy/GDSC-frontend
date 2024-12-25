@@ -47,10 +47,10 @@
 		}
 	}
 	.grid-wrapper {
-		@apply grid gap-8 md:grid-cols-2;
+		@apply grid md:grid-cols-2;
 	}
 	figure {
-		@apply -mt-10 md:ml-auto md:mt-0;
+		@apply -mt-24 md:ml-auto md:mt-0;
 		img {
 			@apply h-[400px] w-full object-contain md:h-[540px];
 		}

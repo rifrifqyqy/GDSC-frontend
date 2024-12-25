@@ -120,8 +120,36 @@
 		</ul>
 	</section>
 </footer>
+<footer class="footer">
+	<p>
+		<img src="images/svelte.png" alt="" />
+		Made with svelte. <img src="" alt="" />
+		<a href="https://svelte.dev/"> see documentation</a>
+	</p>
+</footer>
 
 <style scoped>
+	.footer {
+		p {
+			display: flex;
+			justify-content: center;
+			font-size: 0.9rem;
+			align-items: center;
+			padding: 1rem 0;
+
+			img {
+				aspect-ratio: auto;
+				height: 20px;
+				margin-right: 6px;
+			}
+
+			a {
+				text-decoration: underline;
+				margin-left: 2px;
+				color: rgb(255, 60, 26);
+			}
+		}
+	}
 	.footer-title {
 		@apply text-[1.1rem] font-bold md:text-2xl;
 	}

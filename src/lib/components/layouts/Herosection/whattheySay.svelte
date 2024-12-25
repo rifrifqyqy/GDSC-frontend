@@ -6,7 +6,7 @@
 <main class="main-wrapper grid gap-8 md:mt-16 md:grid-cols-5 md:gap-16">
 	<section class=" md:col-span-2">
 		<figure>
-			<img src="./images/chef.png" class="aspect-auto max-md:mx-auto max-md:h-[440px]" alt="" />
+			<img src="./images/chef.png" class="aspect-auto max-md:mx-auto max-md:h-full" alt="" />
 		</figure>
 	</section>
 	<section class="header-content md:col-span-3">
