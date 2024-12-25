@@ -18,7 +18,7 @@
 		<img src="./images/fudologo.png" class="h-6 md:h-12" alt="" />
 		<h1 class="font-semibold">Fudo Menu</h1>
 	</header>
-	<section class="grid grid-cols-2 gap-4 md:gap-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+	<section class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-10 lg:grid-cols-4 xl:grid-cols-5">
 		{#each recipes as R}
 			<CardMenu
 				title={R.name}
