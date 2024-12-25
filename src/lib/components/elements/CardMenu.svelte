@@ -59,7 +59,7 @@
 					{#if rating != null}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
-							class="w-[1.2rem] md:w-[1.5rem]"
+							class="w-[1rem] md:w-[1.5rem]"
 							viewBox="0 0 24 24"
 							><path
 								fill="currentColor"
@@ -94,7 +94,7 @@
 			.__card-title {
 				@apply flex flex-col;
 				h1 {
-					@apply text-dark-300 text-[1rem] font-semibold leading-snug md:text-[1.3rem];
+					@apply text-dark-300 text-[0.9rem] font-semibold leading-snug md:text-[1.3rem];
 				}
 			}
 
@@ -102,7 +102,7 @@
 				@apply flex flex-wrap gap-2;
 
 				p {
-					@apply text-light-100 bg-primary-100 rounded-full px-2 text-[0.7rem] font-normal max-md:pt-[1px] md:text-[0.8rem];
+					@apply text-light-100 bg-primary-100 rounded-full px-2 text-[0.6rem] font-normal  md:text-[0.8rem];
 				}
 			}
 
@@ -112,11 +112,11 @@
 				.__rating {
 					@apply flex items-center gap-2 text-yellow-500;
 					p {
-						@apply text-dark-400 text-[0.9rem] md:text-[1rem] font-semibold;
+						@apply text-dark-400 max-md:mt-0.5 text-[0.7rem] md:text-[1rem] font-semibold;
 					}
 				}
 				h1 {
-					@apply text-dark-100 text-[1.1rem] md:text-[1.3rem] font-semibold;
+					@apply text-dark-100 text-[0.9rem] md:text-[1.3rem] font-semibold;
 				}
 			}
 		}
