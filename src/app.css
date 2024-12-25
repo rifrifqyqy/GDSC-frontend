@@ -59,3 +59,20 @@ button:focus:not(:focus-visible) {
 .main-wrapper {
 	@apply px-8 md:px-24;
 }
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: #d8d8d8;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background: rgb(255, 82, 82);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: rgb(218, 28, 28);
+}
