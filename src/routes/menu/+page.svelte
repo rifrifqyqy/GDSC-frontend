@@ -12,18 +12,20 @@
 </svelte:head>
 
 <main class="main-wrapper">
-	<header class="bg-primary-100/15 my-8 flex items-center gap-4 rounded-2xl p-8">
-		<img src="./images/fudologo.png" class="h-12" alt="" />
+	<header
+		class="bg-primary-100/15 mb-4 mt-1 flex items-center gap-4 rounded-2xl p-4 md:my-8 md:p-8"
+	>
+		<img src="./images/fudologo.png" class="h-8 md:h-12" alt="" />
 		<h1 class="font-semibold">Fudo Menu</h1>
 	</header>
-	<section class="grid grid-cols-5 gap-10">
+	<section class="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 		{#each recipes as R}
 			<CardMenu
 				title={R.name}
 				thumb={R.image}
 				label={R.mealType}
 				rating={R.rating}
-				price="{formatToRupiah(R.caloriesPerServing * 100)}"
+				price={formatToRupiah(R.caloriesPerServing * 100)}
 			/>
 		{/each}
 	</section>
