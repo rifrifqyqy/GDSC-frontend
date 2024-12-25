@@ -17,8 +17,8 @@
 		{#if !isLoaded}
 			<!-- Placeholder -->
 			<img
-				src="./images/placeholder-img-2.jpg"
-				class=" aspect-square object-cover grayscale"
+				src="./images/placeholder-img-3.png"
+				class=" aspect-square rounded-md bg-gray-200 object-cover grayscale"
 				alt=""
 			/>
 		{/if}
@@ -29,7 +29,7 @@
 			alt=""
 		/>
 		<div
-			class="bg-primary-100 absolute delay-100 bottom-0 flex h-0 w-full text-center text-xs font-semibold uppercase text-white transition-all duration-300 group-hover:h-5"
+			class="bg-primary-100 absolute bottom-0 flex h-0 w-full text-center text-xs font-semibold uppercase text-white transition-all delay-100 duration-300 group-hover:h-5"
 		>
 			<p class="m-auto">Lihat Menu</p>
 		</div>
@@ -52,18 +52,29 @@
 		{/if}
 
 		<footer class="__card-footer mt-auto">
-			<div class="__rating">
-				{#if rating != null}
-					<svg xmlns="http://www.w3.org/2000/svg" class="w-[1rem] md:w-[1.5rem]" viewBox="0 0 24 24"
-						><path
-							fill="currentColor"
-							d="m5.825 21l1.625-7.025L2 9.25l7.2-.625L12 2l2.8 6.625l7.2.625l-5.45 4.725L18.175 21L12 17.275z"
-						/></svg
-					>
-					<p>{rating}</p>
-				{/if}
-			</div>
-			<h1>{price}</h1>
+			{#if !isLoaded}
+				<div class="placeholder h-[1rem] w-[30%]"></div>
+			{:else}
+				<div class="__rating">
+					{#if rating != null}
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="w-[1rem] md:w-[1.5rem]"
+							viewBox="0 0 24 24"
+							><path
+								fill="currentColor"
+								d="m5.825 21l1.625-7.025L2 9.25l7.2-.625L12 2l2.8 6.625l7.2.625l-5.45 4.725L18.175 21L12 17.275z"
+							/></svg
+						>
+						<p>{rating}</p>
+					{/if}
+				</div>
+			{/if}
+			{#if !isLoaded}
+				<div class="placeholder h-[1rem] w-[40%]"></div>
+			{:else}
+				<h1>{price}</h1>
+			{/if}
 		</footer>
 	</article>
 </main>
