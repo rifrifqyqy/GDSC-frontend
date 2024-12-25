@@ -107,7 +107,7 @@
 			}
 
 			.__card-footer {
-				@apply mt-auto flex items-center justify-between pt-4;
+				@apply mt-auto flex items-center justify-between pt-2 md:pt-4;
 
 				.__rating {
 					@apply flex items-center gap-2 text-yellow-500;
