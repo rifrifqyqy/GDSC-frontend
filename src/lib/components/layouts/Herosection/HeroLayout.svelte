@@ -1,5 +1,11 @@
 <script>
+	import { goto } from '$app/navigation';
 	import Button from '$lib/components/elements/Button.svelte';
+
+	// function to navigate to menu page
+	const navigateMenu = () => {
+		goto('/menu');
+	};
 </script>
 
 <main class="main-wrapper grid-wrapper">
@@ -17,6 +23,7 @@
 		<div class="mt-4 flex items-center gap-8 md:mt-8">
 			<Button
 				label="Get Started"
+				onClick={navigateMenu}
 				customClass="gap-4 max-md:text-sm rounded-full md:py-3 md:px-6 font-medium"
 			/>
 			<Button
