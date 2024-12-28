@@ -31,7 +31,13 @@
 	afterNavigate(() => {
 		navigating.set(false);
 		document.body.style.overflow = 'auto';
+
+		closeModal();
 	});
+
+	function closeModal() {
+		navigating.set(false);
+	}
 </script>
 
 <div class="relative min-h-screen font-sans">
