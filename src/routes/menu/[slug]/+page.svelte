@@ -3,6 +3,7 @@
 	import Button from '$lib/components/elements/Button.svelte';
 	import MenuRecom from '$lib/components/layouts/Menu/MenuRecom.svelte';
 	import { formatToRupiah } from '$lib/utils/currency';
+	import { onMount } from 'svelte';
 
 	// @ts-ignore
 	export let data;
@@ -15,16 +16,25 @@
 		])
 	);
 
+	let isMobile = false;
+	/**
+	 * @type {never[]}
+	 */
+	let recommendedData = [];
+	onMount(() => {
+		isMobile = window.innerWidth < 768;
+		const sortedRecipes = allRecipes.sort((a, b) => b.rating - a.rating);
+		const fiveData = sortedRecipes.slice(0, 5);
+		const fourData = sortedRecipes.slice(0, 4);
+
+		recommendedData = isMobile ? fourData : fiveData;
+	});
+
 	// ambil 5 data dan urutkan berdasarkan rating
-	// @ts-ignore
-	const fiveData = allRecipes.slice(0, 5).sort((a, b) => b.rating - a.rating);
-	let mobile = window.innerWidth < 768 ? true : false;
-	// @ts-ignore
-	const fourData = allRecipes.slice(0, 4).sort((a, b) => b.rating - a.rating);
+
 	//state
 	let accordionToggle = false;
 
-	//function to toggle accordion
 	function toggleAccordion() {
 		accordionToggle = !accordionToggle;
 	}
@@ -130,7 +140,7 @@
 			{/each}
 		</section>
 	</article>
-	<MenuRecom fiveData={mobile ? fourData : fiveData} />
+	<MenuRecom fiveData={recommendedData} />
 </main>
 
 <style>
