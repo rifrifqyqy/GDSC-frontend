@@ -122,7 +122,7 @@
 </footer>
 <footer class="footer">
 	<p>
-		<img src="images/svelte.png" alt="" />
+		<img src="/images/svelte.png" alt="" />
 		Made with svelte.
 		<a href="https://svelte.dev/"> see documentations</a>
 	</p>
