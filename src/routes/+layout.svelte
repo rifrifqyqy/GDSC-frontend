@@ -29,10 +29,8 @@
 	});
 
 	afterNavigate(() => {
-		setTimeout(() => {
-			navigating.set(false);
-			document.body.style.overflow = 'auto';
-		}, 400);
+		navigating.set(false);
+		document.body.style.overflow = 'auto';
 	});
 </script>
 
