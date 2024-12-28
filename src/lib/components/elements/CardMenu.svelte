@@ -29,7 +29,7 @@
 			alt=""
 		/>
 		<div
-			class="bg-primary-100 absolute bottom-0 flex h-0 w-full text-center text-xs font-semibold uppercase text-white transition-all delay-100 duration-300 group-hover:h-5"
+			class=" bg-primary-100 absolute bottom-0 flex h-0 w-full text-center text-xs font-semibold uppercase text-white transition-all delay-100 duration-300 group-hover:h-5"
 		>
 			<p class="m-auto">Lihat Menu</p>
 		</div>
@@ -84,7 +84,7 @@
 		@apply flex h-full cursor-pointer flex-col gap-2;
 		.__card-image {
 			img {
-				@apply rounded-lg object-cover object-center;
+				@apply relative rounded-lg object-cover object-center;
 			}
 		}
 
