@@ -51,7 +51,7 @@
 		<Breadcrumb currentpage={recipes.name} />
 		<article class="flex flex-col gap-2">
 			<h1 class="text-[1.3rem] font-semibold md:text-[2rem]">{recipes.name}</h1>
-			<div class="flex w-full gap-2 overflow-x-scroll">
+			<div class="flex w-full gap-2 overflow-x-scroll no-scrollbar">
 				{#each recipes.tags as tag}
 					<p
 						class="text-primary-100 bg-primary-300/20 h-fit text-nowrap rounded-full px-3 py-1 font-semibold max-md:text-[0.7rem]"
