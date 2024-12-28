@@ -18,17 +18,6 @@
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
-
-	let navigation = $state(false);
-
-	beforeNavigate(() => {
-		navigation = true;
-		document.body.style.overflow = 'hidden';
-	});
-	afterNavigate(() => {
-		navigation = false;
-		document.body.style.overflow = 'auto';
-	});
 </script>
 
 <div class="relative min-h-screen font-sans">
