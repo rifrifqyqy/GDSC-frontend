@@ -4,9 +4,6 @@
 	import { onMount } from 'svelte';
 	import FooterLayout from '$lib/components/layouts/footerLayout.svelte';
 	import { page } from '$app/stores';
-	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import { writable } from 'svelte/store';
-	import Modal from '$lib/components/elements/Modal.svelte';
 
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -20,18 +17,6 @@
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
-
-	export const navigating = writable(false);
-
-	beforeNavigate(() => {
-		navigating.set(true);
-		document.body.style.overflow = 'hidden';
-	});
-
-	afterNavigate(() => {
-		navigating.set(false);
-		document.body.style.overflow = 'auto';
-	});
 </script>
 
 <div class="relative min-h-screen font-sans">
@@ -44,9 +29,7 @@
 			</div>
 		</nav>
 	{/if}
-	{#if $navigating}
-		<p>Loading....</p>
-	{/if}
+
 	<main class="mx-auto min-h-screen 2xl:container">
 		{@render children()}
 	</main>
@@ -54,7 +37,6 @@
 		<FooterLayout />
 	{/if}
 	<!-- modal loading beforenavigate -->
-	
 </div>
 
 <style scoped>
