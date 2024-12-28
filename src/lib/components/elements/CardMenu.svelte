@@ -18,7 +18,7 @@
 			<!-- Placeholder -->
 			<img
 				src="./images/placeholder-img-3.png"
-				class=" aspect-square rounded-md bg-gray-200 object-cover grayscale"
+				class=" aspect-square animate-pulse rounded-md bg-gray-200 object-cover grayscale"
 				alt=""
 			/>
 		{/if}
@@ -37,8 +37,8 @@
 	<article class="__card-content">
 		<div class="__card-title">
 			{#if !isLoaded}
-				<div class="placeholder h-[1rem] w-[90%]"></div>
-				<div class="placeholder h-[1rem] w-[60%]"></div>
+				<div class="placeholder h-[1rem] w-[90%] animate-pulse"></div>
+				<div class="placeholder h-[1rem] w-[60%] animate-pulse mt-2"></div>
 			{:else}
 				<h1>{title}</h1>
 			{/if}
@@ -122,18 +122,6 @@
 		}
 	}
 	.placeholder {
-		background-color: #ddd;
-		border-radius: 4px;
-		height: 1.2rem;
-		margin: 0.5rem 0;
-		animation: shimmer 1s infinite linear;
-	}
-	@keyframes shimmer {
-		0% {
-			background-position: -200px 0;
-		}
-		100% {
-			background-position: 200px 0;
-		}
+		@apply h-[1.2rem] animate-pulse rounded-md bg-gray-200;
 	}
 </style>
