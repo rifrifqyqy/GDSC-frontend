@@ -89,7 +89,7 @@
 </nav>
 <!-- mobile navigation -->
 <nav
-	class="absolute left-0 top-0 -z-20 block h-screen w-full bg-white transition-all duration-300 md:hidden
+	class="absolute left-0 top-0 -z-20 block h-dvh w-full bg-white transition-all duration-300 md:hidden
 {navToggle ? 'translate-y-0 opacity-100' : 'translate-y-[-150%] opacity-0'}"
 >
 	<ul class="__nav-mobilemenu">
