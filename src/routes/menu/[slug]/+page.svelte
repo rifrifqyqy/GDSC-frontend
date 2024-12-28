@@ -30,8 +30,6 @@
 		recommendedData = isMobile ? fourData : fiveData;
 	});
 
-	// ambil 5 data dan urutkan berdasarkan rating
-
 	//state
 	let accordionToggle = false;
 

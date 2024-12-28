@@ -7,7 +7,6 @@
 	import { formatToRupiah } from '$lib/utils/currency';
 </script>
 
-ad
 <main class="mt-8 flex flex-col gap-6 md:mt-16">
 	<header>
 		<h1 class=" text-[1.3rem] font-semibold md:text-[2rem]">You may also like</h1>
@@ -23,7 +22,6 @@ ad
 					rating={data.rating}
 					price={formatToRupiah(data.caloriesPerServing * 100)}
 				/>
-				{data.id}
 			</a>
 		{/each}
 	</section>
