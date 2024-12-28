@@ -31,13 +31,7 @@
 	afterNavigate(() => {
 		navigating.set(false);
 		document.body.style.overflow = 'auto';
-
-		closeModal();
 	});
-
-	function closeModal() {
-		navigating.set(false);
-	}
 </script>
 
 <div class="relative min-h-screen font-sans">
@@ -50,6 +44,9 @@
 			</div>
 		</nav>
 	{/if}
+	{#if $navigating}
+		<p>Loading....</p>
+	{/if}
 	<main class="mx-auto min-h-screen 2xl:container">
 		{@render children()}
 	</main>
@@ -57,9 +54,7 @@
 		<FooterLayout />
 	{/if}
 	<!-- modal loading beforenavigate -->
-	{#if $navigating}
-		<Modal />
-	{/if}
+	
 </div>
 
 <style scoped>
