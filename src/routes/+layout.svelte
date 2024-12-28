@@ -21,7 +21,7 @@
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
 
-	let navigating = writable(false);
+	export const navigating = writable(false);
 
 	beforeNavigate(() => {
 		navigating.set(true);
