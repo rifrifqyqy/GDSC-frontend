@@ -36,6 +36,8 @@
 	function toggleAccordion() {
 		accordionToggle = !accordionToggle;
 	}
+
+	let isLoaded = false;
 </script>
 
 <svelte:head>
@@ -49,10 +51,10 @@
 		<Breadcrumb currentpage={recipes.name} />
 		<article class="flex flex-col gap-2">
 			<h1 class="text-[1.3rem] font-semibold md:text-[2rem]">{recipes.name}</h1>
-			<div class="flex gap-2">
+			<div class="flex w-full gap-2 overflow-x-scroll">
 				{#each recipes.tags as tag}
 					<p
-						class="text-primary-100 bg-primary-300/20 rounded-full px-3 py-1 font-semibold max-md:text-[0.7rem]"
+						class="text-primary-100 bg-primary-300/20 h-fit text-nowrap rounded-full px-3 py-1 font-semibold max-md:text-[0.7rem]"
 					>
 						{tag}
 					</p>
@@ -62,11 +64,27 @@
 	</header>
 	<main class="__grid-wrapper">
 		<section class="_left-content">
-			<figure class="">
-				<img src={recipes.image} class="" alt="" />
+			<figure>
+				{#if !isLoaded}
+					<img
+						src="/images/placeholder-img-3.png"
+						class="object-contain object-center grayscale"
+						alt=""
+					/>
+				{/if}
+				<img
+					src={recipes.image}
+					onload={() => (isLoaded = true)}
+					class={isLoaded ? 'block' : 'hidden'}
+					alt=""
+				/>
 			</figure>
 			<div class="_bg-blur">
-				<img src={recipes.image} class="blur brightness-50" alt="" />
+				{#if !isLoaded}
+					<div class="h-full w-full bg-gray-200 max-md:hidden"></div>
+				{:else}
+					<img src={recipes.image} class="blur brightness-50" alt="" />
+				{/if}
 			</div>
 		</section>
 
@@ -127,12 +145,16 @@
 	<article class="flex flex-col gap-4">
 		<h1 class=" text-[1.3rem] font-semibold md:text-[2rem]">How we cooked?</h1>
 
-		<section class="flex flex-col gap-2">
+		<section class="flex flex-col gap-4">
 			{#each recipes.instructions as steps}
 				<p
-					class="text-dark-100 rounded-md bg-gray-200 px-4 py-2 max-md:text-sm"
+					class="text-dark-100 flex items-center gap-4 rounded-md max-md:text-sm"
 					style="font-family: 'Inter', sans-serif;"
 				>
+					<span class="bg-primary-100/20 text-primary-100 rounded-full px-3 py-1 max-md:text-xs"
+						>{recipes.instructions.indexOf(steps) + 1}</span
+					>
+
 					{steps}
 				</p>
 			{/each}
@@ -154,15 +176,15 @@
 		@apply relative flex flex-col gap-4 overflow-hidden rounded-2xl md:col-span-3 md:gap-8;
 
 		figure {
-			@apply overflow-hidden rounded-2xl md:px-24;
+			@apply flex h-fit overflow-hidden rounded-2xl md:px-24;
 
 			img {
-				@apply aspect-auto object-cover md:aspect-video md:h-[440px];
+				@apply aspect-auto w-full rounded-2xl object-cover md:aspect-video md:h-[440px];
 			}
 		}
 
 		._bg-blur {
-			@apply absolute left-0 top-0 -z-10 hidden w-full overflow-hidden rounded-2xl md:block md:h-[440px];
+			@apply absolute left-0 top-0 -z-10 hidden w-full overflow-hidden rounded-2xl bg-red-400 md:block md:h-[440px];
 		}
 	}
 
