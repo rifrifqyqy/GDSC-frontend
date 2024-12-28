@@ -3,7 +3,7 @@
 </script>
 
 <nav aria-label="breadcrumb">
-	<ol class="breadcrumb flex items-center gap-1 text-gray-400 md:gap-2">
+	<ol class="breadcrumb items-center gap-1 text-gray-400 md:gap-2">
 		<li class="breadcrumb-item"><a href="/">Home</a></li>
 		<span>/</span>
 		<li class="breadcrumb-item"><a href="/menu">Menu</a></li>
@@ -14,7 +14,7 @@
 
 <style>
 	.breadcrumb {
-		@apply hidden md:block;
+		@apply hidden md:flex;
 		.breadcrumb-item {
 			@apply hover:text-dark-100 text-[0.7rem] text-gray-400 md:text-[0.9rem];
 
