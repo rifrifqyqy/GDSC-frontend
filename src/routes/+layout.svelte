@@ -5,7 +5,6 @@
 	import FooterLayout from '$lib/components/layouts/footerLayout.svelte';
 	import { page } from '$app/stores';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
-	import Modal from '$lib/components/elements/Modal.svelte';
 
 	/** @type {{children: import('svelte').Snippet}} */
 	let { children } = $props();
@@ -50,9 +49,6 @@
 		<FooterLayout />
 	{/if}
 	<!-- modal loading beforenavigate -->
-	{#if navigation}
-		<Modal />
-	{/if}
 </div>
 
 <style scoped>
