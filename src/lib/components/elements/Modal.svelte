@@ -1,3 +1,6 @@
+<script></script>
+
+
 <div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60">
 	<div
 		class="flex aspect-square h-44 flex-col justify-center gap-8 rounded-xl bg-white p-8 md:h-64"
