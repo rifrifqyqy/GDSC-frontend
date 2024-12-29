@@ -11,3 +11,5 @@ export const load = async ({ fetch }) => {
 		return { recipes: [] };
 	}
 };
+
+export const prerender = true;
