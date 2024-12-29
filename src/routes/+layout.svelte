@@ -25,15 +25,15 @@
 	beforeNavigate(() => {
 		navigating.set(true);
 		isShowed = !isShowed;
-		console.log('before navigate');
-		setTimeout(() => {
-			isShowed = false;
-		}, 1000);
+		if (isShowed === true) {
+			setTimeout(() => {
+				isShowed = false;
+			}, 1000);
+		}
 	});
 	afterNavigate(() => {
 		navigating.set(false);
 		isShowed = false;
-		console.log('after navigate');
 	});
 </script>
 
