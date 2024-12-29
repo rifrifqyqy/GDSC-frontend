@@ -29,6 +29,7 @@
 	afterNavigate(() => {
 		navigating.set(false);
 		isShowed = false;
+		console.log('after navigate');
 	});
 </script>
 

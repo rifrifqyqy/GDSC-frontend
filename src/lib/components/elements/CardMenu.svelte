@@ -17,7 +17,7 @@
 		{#if !isLoaded}
 			<!-- Placeholder -->
 			<img
-				src="./images/placeholder-img-3.png"
+				src="/images/placeholder-img-3.png"
 				class=" aspect-square animate-pulse rounded-md bg-gray-200 object-cover grayscale"
 				alt=""
 			/>

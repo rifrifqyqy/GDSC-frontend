@@ -103,7 +103,7 @@
 				>
 				<article class="_calories-wrap">
 					<p>Calories: {recipes.caloriesPerServing} kkal</p>
-					<a href="" class="text-primary-100 font-semibold underline"
+					<a href="/" class="text-primary-100 font-semibold underline"
 						>Reviews ({recipes.reviewCount})</a
 					>
 				</article>
