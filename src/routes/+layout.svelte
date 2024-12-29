@@ -26,6 +26,9 @@
 		navigating.set(true);
 		isShowed = !isShowed;
 		console.log('before navigate');
+		setTimeout(() => {
+			isShowed = false;
+		}, 1000);
 	});
 	afterNavigate(() => {
 		navigating.set(false);
