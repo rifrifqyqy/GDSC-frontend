@@ -24,7 +24,8 @@
 	let isShowed = $state(false);
 	beforeNavigate(() => {
 		navigating.set(true);
-		isShowed = true;
+		isShowed = !isShowed;
+		console.log('before navigate');
 	});
 	afterNavigate(() => {
 		navigating.set(false);
