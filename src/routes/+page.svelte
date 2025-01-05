@@ -1,11 +1,11 @@
-<script type="module">
+<script>
 	import DownloadApp from '$lib/components/layouts/Herosection/downloadApp.svelte';
 	import HeroLayout from '$lib/components/layouts/Herosection/HeroLayout.svelte';
 	import MenuShow from '$lib/components/layouts/Herosection/menuShow.svelte';
 	import WhattheySay from '$lib/components/layouts/Herosection/whattheySay.svelte';
 	import WhatweServe from '$lib/components/layouts/whatweServe.svelte';
 	import { gsap } from 'gsap';
-	import ScrollTrigger from 'gsap/ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	gsap.registerPlugin(ScrollTrigger);
 </script>
 
