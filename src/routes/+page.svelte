@@ -4,6 +4,9 @@
 	import MenuShow from '$lib/components/layouts/Herosection/menuShow.svelte';
 	import WhattheySay from '$lib/components/layouts/Herosection/whattheySay.svelte';
 	import WhatweServe from '$lib/components/layouts/whatweServe.svelte';
+	import { gsap } from 'gsap';
+	import ScrollTrigger from 'gsap/ScrollTrigger';
+	gsap.registerPlugin(ScrollTrigger);
 </script>
 
 <svelte:head>
@@ -32,10 +35,6 @@
 
 <style>
 	.hero-wrapper {
-		background: linear-gradient(
-			180deg,
-			rgba(245, 71, 72, 0.20) 0%,
-			rgba(255, 255, 255, 0.3) 75.17%
-		);
+		background: linear-gradient(180deg, rgba(245, 71, 72, 0.2) 0%, rgba(255, 255, 255, 0.3) 75.17%);
 	}
 </style>

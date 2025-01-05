@@ -1,4 +1,5 @@
 <script>
+	import { gsap } from './../../../../node_modules/gsap/gsap-core.js';
 	const dataserve = [
 		{
 			id: 1,
@@ -19,9 +20,54 @@
 			images: '/images/fatman3.png'
 		}
 	];
+
+	import { gsap as blender } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		let tl = blender.timeline({
+			scrollTrigger: {
+				trigger: '#serve',
+				start: 'top 40%',
+				end: 'top 30%',
+				scrub: 2
+			}
+		});
+
+		tl.from('.title h1', {
+			y: 100,
+			opacity: 0,
+			duration: 0.6,
+			ease: 'power4.out'
+		});
+		tl.from('.title h2', {
+			y: 100,
+			opacity: 0,
+			duration: 0.6,
+			ease: 'power4.out'
+		});
+		let scrollTL = blender.timeline({
+			scrollTrigger: {
+				trigger: '#serve',
+				start: 'top 40%',
+				end: 'top 30%',
+				scrub: 3,
+				toggleActions: 'play pause resume reset'
+			}
+		});
+		scrollTL.from('.card', {
+			scale: 0.8,
+			opacity: 0,
+			stagger: {
+				each: 0.6,
+				from: 'start'
+			}
+		});
+	});
 </script>
 
-<main class="main-wrapper">
+<main class="main-wrapper" id="serve">
 	<article class="title">
 		<h1>What We Serve</h1>
 		<h2>Your Favourite Food Delivery Partner</h2>
@@ -50,10 +96,10 @@
 		@apply flex flex-col items-center gap-4;
 
 		h1 {
-			@apply text-primary-100 font-medium uppercase md:text-xl;
+			@apply font-medium uppercase text-primary-100 md:text-xl;
 		}
 		h2 {
-			@apply text-dark-100 max-w-[600px] text-center text-[2rem] font-semibold leading-snug md:text-[3.3rem];
+			@apply max-w-[600px] text-center text-[2rem] font-semibold leading-snug text-dark-100 md:text-[3.3rem];
 		}
 	}
 	.card {
@@ -61,10 +107,10 @@
 		article {
 			@apply mt-2 flex flex-col items-center justify-center gap-2;
 			h1 {
-				@apply text-dark-100 text-[1.5rem] font-semibold md:text-[1.8rem];
+				@apply text-[1.5rem] font-semibold text-dark-100 md:text-[1.8rem];
 			}
 			p {
-				@apply text-dark-500 text-center max-md:text-[0.8rem];
+				@apply text-center text-dark-500 max-md:text-[0.8rem];
 			}
 		}
 	}
