@@ -1,5 +1,4 @@
 <script>
-	import { gsap } from './../../../../node_modules/gsap/gsap-core.js';
 	const dataserve = [
 		{
 			id: 1,
@@ -22,7 +21,6 @@
 	];
 
 	import { gsap as blender } from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { onMount } from 'svelte';
 
 	onMount(() => {
