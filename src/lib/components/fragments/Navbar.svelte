@@ -5,7 +5,7 @@
 
 	// rective variable
 	let navToggle = $state(false);
-
+	let btn_dark = writable(false);
 	// function to toggle navigation
 	const toggleNav = () => {
 		navToggle = !navToggle;
@@ -17,27 +17,84 @@
 		navToggle = false;
 		document.body.style.overflow = 'auto';
 	};
+
+	import { gsap as blender } from 'gsap';
+	import { onMount } from 'svelte';
+	import { writable } from 'svelte/store';
+	import Transition from '../elements/Transition.svelte';
+
+	const handleHover = ({ target }) => {
+		blender.to(target, {
+			y: 200,
+			x: 70,
+			rotation: 180,
+			opacity: 0.4,
+			duration: 2,
+			ease: 'bounce.out'
+		});
+	};
+	const handleTroll = ({ target }) => {
+		blender.to(target, {
+			y: -200,
+			x: -500,
+			rotation: 0,
+			duration: 1,
+			ease: 'bounce.out',
+			display: 'none'
+		});
+		// ubah btn_dark menjadi true
+		btn_dark.update((n) => !n);
+		console.log($btn_dark);
+	};
+	if ($btn_dark) {
+		onMount(() => {
+			blender.fromTo(
+				'#btn2',
+				{
+					y: -40,
+					opacity: 0
+				},
+				{
+					y: 0,
+					opacity: 1,
+					duration: 1,
+					ease: 'power4.in'
+				}
+			);
+		});
+	}
 </script>
 
 <nav class="navbar z-[9999] {navToggle ? 'border-b border-zinc-300' : ''} ">
-	<figure class="mr-auto">
-		<img src="/images/fudologo.png" alt="" />
+	<figure
+		class="mr-auto"
+		onmousemove={handleHover({ target: '#fudo' })}
+		aria-hidden="true"
+		onclick={handleTroll({ target: '#fudo' })}
+	>
+		<img src="/images/fudologo.png" alt="" id="fudo" />
 	</figure>
 	<ul class="hidden items-center md:flex xl:gap-8">
-		<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-			<a href="/">Why Fudo</a>
+		<li>
+			<Transition btn_title="Why Fudo" href="/" id="home"></Transition>
 		</li>
-		<li aria-current={$page.url.pathname === '/services' ? 'page' : undefined}>
-			<a href="/services">Services</a>
+		<li>
+			<Transition btn_title="Services" href="/services" id="service"></Transition>
 		</li>
-		<li aria-current={$page.url.pathname.startsWith('/menu') ? 'page' : undefined}>
-			<a href="/menu">Menu</a>
+		<li>
+			<Transition btn_title="Menu" href="/menu" id="menu"></Transition>
 		</li>
 		<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
-			<a href="/contact">Contact</a>
+			<Transition btn_title="Contact" href="/contact" id="contact"></Transition>
 		</li>
 	</ul>
-	<div class="__btn-wrapper ml-auto hidden md:flex">
+	<div
+		id="btn"
+		aria-hidden="true"
+		onmousemove={handleHover({ target: '#btn' })}
+		onclick={() => handleTroll({ target: '#btn' })}
+		class="__btn-wrapper ml-auto hidden md:flex"
+	>
 		<Button label="login" customClass="gap-4 rounded-full py-3 px-5 "
 			><svg
 				width="24"
@@ -54,9 +111,28 @@
 			Login
 		</Button>
 	</div>
+	{#if $btn_dark}
+		<div class="__btn-wrapper ml-auto hidden md:flex" id="btn2">
+			<Button label="login" customClass="gap-4 rounded-full py-3 px-5 bg-gray-800 border-gray-400"
+				><svg
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M4 15H6V20H18V4H6V9H4V3C4 2.44772 4.44772 2 5 2H19C19.5523 2 20 2.44772 20 3V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V15ZM10 11V8L15 12L10 16V13H2V11H10Z"
+						fill="white"
+					/>
+				</svg>
+				Login
+			</Button>
+		</div>
+	{/if}
 	<section>
 		<button
-			class="text-primary-100 z-[9999] mt-1.5 md:hidden"
+			class="z-[9999] mt-1.5 text-primary-100 md:hidden"
 			aria-label="Toggle navigation"
 			onclick={toggleNav}
 		>
@@ -128,7 +204,7 @@
 		}
 		li {
 			a {
-				@apply text-dark-100 rounded-full px-5 py-2 font-medium transition-all duration-300;
+				@apply rounded-full px-5 py-2 font-medium text-dark-100 transition-all duration-300;
 				&:hover {
 					@apply bg-zinc-200;
 				}
@@ -149,7 +225,7 @@
 			@apply flex w-full justify-center;
 		}
 		a {
-			@apply hover:text-primary-100 w-2/3 border-b border-zinc-300 py-4 text-zinc-500 transition-all duration-300;
+			@apply w-2/3 border-b border-zinc-300 py-4 text-zinc-500 transition-all duration-300 hover:text-primary-100;
 		}
 	}
 </style>
