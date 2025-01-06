@@ -21,20 +21,6 @@
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
 	export const navigating = writable(false);
-	let isShowed = $state(false);
-	beforeNavigate(() => {
-		navigating.set(true);
-		isShowed = !isShowed;
-		if (isShowed === true) {
-			setTimeout(() => {
-				isShowed = false;
-			}, 1000);
-		}
-	});
-	afterNavigate(() => {
-		navigating.set(false);
-		isShowed = false;
-	});
 </script>
 
 <div class="relative min-h-screen font-sans">
@@ -55,9 +41,6 @@
 		<FooterLayout />
 	{/if}
 	<!-- modal loading beforenavigate -->
-	{#if isShowed}
-		<Modal />
-	{/if}
 </div>
 
 <style scoped>
